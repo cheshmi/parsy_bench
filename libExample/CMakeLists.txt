@@ -35,3 +35,27 @@ target_link_libraries(pardiso6_cholesky
         metis
 
         )
+
+
+        project(MKLCholesky)
+
+
+
+set(SOURCE_FILES cholesky_mkl.cpp )
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3" )
+include_directories(${MKL_INC} ${METIS_INC} "../common/")
+link_directories(${MKL_LIB} ${MMM} ${METIS_LIB})
+add_executable(MKLCholesky ${SOURCE_FILES})
+
+target_link_libraries(MKLCholesky
+        iomp5
+        #mkl_sequential
+        mkl_intel_lp64
+        mkl_core
+        mkl_intel_thread
+        #pthread
+        m
+        dl
+
+        metis
+        )
