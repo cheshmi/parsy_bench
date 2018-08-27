@@ -90,6 +90,7 @@ int main(int argc, char *argv[]) {
   return -1;
  }
  printf("loaded!\n");
+ n = n_t; nnz = nnz_t;
 /*
     double  *a = (double*)mkl_calloc(nnz,sizeof(double),64);
     MKL_INT    *ja = (int*)mkl_calloc(nnz,sizeof(int),64);
