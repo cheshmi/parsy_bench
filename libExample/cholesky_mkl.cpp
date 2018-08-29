@@ -158,9 +158,9 @@ int main(int argc, char *argv[]) {
  A->stype=-1;
  A->packed=1;
  A->nz=NULL;
-
  long nnzFull = A->nzmax*2;//Symmetric case
  ATrans = ptranspose(A, 0, NULL, NULL, 0, status) ;
+
 #if 0
  for (int i = 0; i < ncol; ++i) {
   for (int j = A->p[i]; j < A->p[i+1]; ++j) {
@@ -316,6 +316,7 @@ int main(int argc, char *argv[]) {
 //    pardisoinit (pt,  &mtype, iparm);
 /*    iparm[35] = 0;*/
  //iparm[1] = 0;
+
  omp_set_num_threads(num_thread);
  //MKL_Domain_Set_Num_Threads(4,MKL_DOMAIN_BLAS);
  printf("yaaaaaaaay\n");
